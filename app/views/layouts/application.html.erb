@@ -6,8 +6,10 @@
     <%= render 'layouts/header' %>
 
     <div class="container">
-      <%= yield %> </div>
-      <%= render 'layouts/footer' %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+    <div class="container">
       <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
