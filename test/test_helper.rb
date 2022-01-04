@@ -22,6 +22,10 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
+
+  def no_forwarding_url?
+    session[:forwarding_url].nil?
+  end
 end
 
 class ActionDispatch::IntegrationTest
