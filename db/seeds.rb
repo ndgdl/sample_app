@@ -8,7 +8,8 @@ p "Creating main user..."
 User.create!(name:  "Nicolas de Guilhem",
              email: "nicolas.dgdl@hotmail.fr",
              password:              "foobar",
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+             admin: true)
 p "Main user created"
 
 # Generate a bunch of additional users.
