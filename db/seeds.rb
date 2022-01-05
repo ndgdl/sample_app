@@ -9,7 +9,9 @@ User.create!(name:  "Nicolas de Guilhem",
              email: "nicolas.dgdl@hotmail.fr",
              password:              "foobar",
              password_confirmation: "foobar",
-             admin: true)
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
 p "Main user created"
 
 # Generate a bunch of additional users.
@@ -19,8 +21,10 @@ p "Creating all other users..."
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name: name,
-              email: email,
-              password:              password,
-              password_confirmation: password)
+               email: email,
+               password:              password,
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
 end
 p "All other users created"
