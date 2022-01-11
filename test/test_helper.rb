@@ -21,6 +21,7 @@ class ActiveSupport::TestCase
   # Log in as a particular user.
   def log_in_as(user)
     session[:user_id] = user.id
+    session[:session_token] = user.session_token
   end
 
   def no_forwarding_url?
