@@ -6,4 +6,10 @@ class MicropostsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def micropost_params
+    params.require(:micropost).permit(:content)
+  end
 end
