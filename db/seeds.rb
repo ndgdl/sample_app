@@ -1,8 +1,3 @@
-# Cleaning DB
-p "Cleaning DB..."
-User.destroy_all
-p "Cleaning done"
-
 # Create a main sample user.
 p "Creating main user..."
 User.create!(name:  "Nicolas de Guilhem",
@@ -28,3 +23,12 @@ p "Creating all other users..."
                activated_at: Time.zone.now)
 end
 p "All other users created"
+
+# Generate microposts for a subset of users.
+p "Creating microposts..."
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| user.microposts.create!(content: content) }
+end
+p "Microposts created"
