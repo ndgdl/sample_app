@@ -7,15 +7,15 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect create when not logged in" do
     assert_no_difference 'Micropost.count' do
-      post micropost_path, params: { micropost: { content: "Lorem ipsum" } }
+      post microposts_path, params: { micropost: { content: "Lorem ipsum" } }
     end
-    assert_redirect_to login_url
+    assert_redirected_to login_url
   end
 
   test "should redirect destroy when not logged in" do
     assert_no_difference 'Micropost.count' do
       delete micropost_path(@micropost)
     end
-    assert_redirect_to login_url
+    assert_redirected_to login_url
   end
 end
